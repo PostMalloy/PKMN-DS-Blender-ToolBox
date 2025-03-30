@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "Remove Unassigned Materials",
+    "name": "PKMN DS Toolbox: Remove Unassigned Materials",
     'author': 'Freshlad',
     "blender": (4, 0, 0),
     "category": "Object",

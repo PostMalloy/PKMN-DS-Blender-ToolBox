@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "Setup Shaders for Vertex Coloring + Textures",
+    "name": "PKMN DS Toolbox: Setup Shaders",
     "blender": (4, 0, 0),
     "category": "Object",
 }

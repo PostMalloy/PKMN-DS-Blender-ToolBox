@@ -1,5 +1,5 @@
 bl_info = {
-    "name": "Import PDSMS Object with vertex colors",
+    "name": "PKMN DS Toolbox: Import PDSMS Object",
     "blender": (4, 0, 0),
     "category": "Object",
 }

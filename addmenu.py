@@ -1,7 +1,7 @@
 import bpy
 
 bl_info = {
-    'name': 'PKMN DS Toolbox',
+    'name': 'PKMN DS Toolbox: Menus',
     'author': 'Freshlad',
     'version': (0, 3),
     'blender': (4, 0, 0),

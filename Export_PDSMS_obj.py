@@ -1,5 +1,6 @@
 bl_info = {
-    "name": "Export as PDSMS Object with vertex colors",
+    "name": "PKMN DS Toolbox: Export as PDSMS Object",
+    'author': 'Freshlad',
     "blender": (4, 0, 0),
     "category": "Object",
 }

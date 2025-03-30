@@ -2,7 +2,7 @@ import bpy
 from mathutils import Color
 
 bl_info = {
-    'name': 'Split By Color',
+    'name': 'PKMN DS Toolbox: Split By Color',
     'author': 'FreshLad, largely based on the work of Tamas Kemenczy and Piotr Zgodziński',
     'blender': (4, 0, 0),
     'location': 'View3D > Specials > Split by Color',
