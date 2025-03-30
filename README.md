@@ -2,7 +2,7 @@
 A set of simple python scripts that can help when making models for DS games, particularly the core GenIV-V pokemon games.
 
 # Installation (Blender 4.0+)
-Download the files, unzip them and install them via the blender addons menu. Make sure all plugins are active.
+Download the files, unzip them and install them via the blender addons menu. Make sure all plugins labeled "PKMN DS Toolbox" are active. As long as addmenu.py is enabled, you can install as few or as many as you'd like.
 
 # How to Use
 You'll find the tools to the right of the shading menu:
@@ -11,7 +11,9 @@ You'll find the tools to the right of the shading menu:
 ## Import/Export PDSMS .obj
 Trifindo's PDSMS mapping tool accepts importing traditional .obj files into a tileset. It even accepts vertex colored .obj files! Blender can export vertex colors as part of an .obj file, and PDSMS can read them, so why are they stripped as part of the import to PDSMS? The reason is because PDSMS expects vertex colors to be written in a slightly different format than the standard .obj file from the blender export, and vice versa. It's therefore relatively simple to write a blender addon to modify the .obj file into a format that PDSMS expects (in the case of the export script) or a format that blender expects (in the case of the import one). 
 ### Export
-  To use, simply highlight the object in blender and select "export to PDSMS .obj". Choose a path and the resulting object and material file will be written to that path. **However** there is one caveat here: PDSMS cannot properly import **face mode vertex colors** without a little help. 
+  To use, simply highlight the object in blender and select "export to PDSMS .obj". Choose a path and the resulting object and material file will be written to that path. **However** there is one caveat here: PDSMS cannot properly import **face mode vertex colors** without splitting the mesh up. This is unfortunately a limitation on the PDSMS side which I can't fix. Before exporting, make sure to run the **"Split by Vertex Color"** addon and export each object separately. Import them into PDSMS as separate tiles, then place them together on the grid to recreate the mesh as it was in blender. 
+
+  Even if you aren't using vertex colors, this is a handy tool because it automatically selects the correct .obj settings so the model is imported with the correct orientation, material settings, etc. in PDSMS. 
 
 ### Import
   Click "Import to PDSMS .obj", select the .obj file you're importing to blender, and you're done!
@@ -23,5 +25,5 @@ Trifindo's PDSMS mapping tool accepts importing traditional .obj files into a ti
 
 This can be a bit tedious for a model with many materials, so this addon will do it for you. In object mode, highlight your object and pick "Setup VCs + Textures" in the menu. You should then be able to see both at once. It'll also automatically set the texture interpolation to "closest", so textures aren't blurry. 
 
-## Split by Vertex Color
+## 
 
