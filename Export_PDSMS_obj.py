@@ -61,9 +61,30 @@ class PDSMSExport(bpy.types.Operator):
         # Set the file path for export
         filepath = self.directory + "PDSMS.obj"
 
+        obj = bpy.context.object
+        
+        mesh = obj.data
+        used_materials = set()
+
+    # Handle unused materials:
+
+        # Check which materials are actually assigned to faces
+        for poly in mesh.polygons:
+            used_materials.add(poly.material_index)
+        
+        # Identify unused material slots
+        unused_materials = [i for i in range(len(obj.material_slots)) if i not in used_materials]
+        
+        # Remove unassigned materials without affecting assigned ones
+        for i in reversed(unused_materials):
+            mesh.materials.pop(index=i)
+
+
+    # Export
+
         # Ensure the active object is selected for export
         bpy.ops.object.select_all(action='DESELECT')
-        bpy.context.object.select_set(True)
+        obj.select_set(True)
 
         # Export the .obj file with vertex colors
         bpy.ops.wm.obj_export(
