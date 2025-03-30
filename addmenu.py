@@ -35,6 +35,7 @@ class CustomMenu(bpy.types.Menu):
         layout.menu(ImportExportSubmenu.bl_idname)  # Add the submenus
         layout.menu(MaterialToolsSubmenu.bl_idname)
         layout.operator("mesh.split_by_vertex_color")
+        layout.operator("object.remove_unassigned_materials")
 
 def draw_item(self, context):
     layout = self.layout
