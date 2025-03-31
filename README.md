@@ -14,7 +14,9 @@ Additional information about the .obj file format, blender and PDSMS interact is
 ## Import/Export PDSMS .obj
 
 ### Export
-  To use, simply highlight the object in blender (object view) and select "export to PDSMS .obj". Choose a path and the resulting object and material file will be written to that path with the names PDSMS.obj and PDSMS.mtl. **However** there is one caveat here: PDSMS cannot properly import **face mode vertex colors** without splitting the mesh up. This is unfortunately a limitation on the PDSMS side which I can't fix. Before exporting, make sure to run the **"Split by Vertex Color"** addon and export each object separately. Import them into PDSMS as separate tiles, then place them together on the grid to recreate the mesh as it was in blender. More info about this is available in the wiki section.
+  To use, simply highlight the object in blender (object view) and select "export to PDSMS .obj". Choose a path and the resulting object and material file will be written to that path with the names PDSMS.obj and PDSMS.mtl. 
+  
+  There is one caveat here: PDSMS cannot properly import **face mode vertex colors** without splitting the mesh up. This is unfortunately a limitation on the PDSMS side which I can't fix. If you're coloring in face mode, make sure to run the **"Split by Vertex Color"** addon and export each object separately. Import them into PDSMS as separate tiles, then place them together on the grid to recreate the mesh as it was in blender. More info about this operation, and why it's neccesary, is available in the wiki section.
 
   Even if you aren't using vertex colors, this is a handy tool because it automatically selects the correct .obj settings so the model is imported with the correct orientation, material settings, etc. in PDSMS. 
 
