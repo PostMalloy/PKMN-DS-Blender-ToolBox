@@ -2,7 +2,7 @@
 A set of simple python scripts that can help when making models for DS games, particularly the core GenIV-V pokemon games.
 
 # Installation (Blender 4.0+)
-Download the files, unzip them and install them via the blender addons menu. Make sure all plugins labeled "PKMN DS Toolbox" are active. As long as addmenu.py is enabled, you can install as few or as many as you'd like.
+Download the files, unzip them and install them via the blender addons menu. Make sure all plugins labeled "PKMN DS Toolbox" are active. As long as MainAddon.py is enabled, you can install as few or as many as you'd like.
 
 # How to Use
 You'll find the tools to the right of the shading menu:
