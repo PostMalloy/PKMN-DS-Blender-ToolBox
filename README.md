@@ -30,5 +30,7 @@ Additional information about the .obj file format, blender and PDSMS interact is
 
 This can be a bit tedious for a model with many materials, so this addon will do it for you. In object mode, highlight your object and pick "Setup VCs + Textures" in the menu. You should then be able to see both at once. It'll also automatically set the texture interpolation to "closest", so textures aren't blurry. 
 
-## 
+## Remove Unassigned Materials
+
+PDSMS doesn't like an .obj file or .mtl file with textures that aren't included in the model. This can happen if you split an object into pieces and don't remove the unused materials. This script removes unassigned materials from a model. Select in object mode, run "Remove Unassigned Materials", done.
 
