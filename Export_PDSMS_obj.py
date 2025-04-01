@@ -18,18 +18,8 @@ class PDSMSExport(bpy.types.Operator):
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.
 
     # # Define this to tell 'fileselect_add' that we want a directoy
-    directory: StringProperty(
-        name="Outdir Path",
-        description="Where I will save my stuff"
-        # subtype='DIR_PATH' is not needed to specify the selection mode.
-        # But this will be anyway a directory path.
-        )
-
-#    Filters folders
-    filter_folder: BoolProperty(
-        default=True,
-        options={"HIDDEN"}
-        )
+    filepath : bpy.props.StringProperty(subtype="FILE_PATH")
+    directory : bpy.props.StringProperty(subtype="DIR_PATH") 
 
     def invoke(self, context, event):
         # Open browser, take reference to 'self' read the path to selected
@@ -60,7 +50,7 @@ class PDSMSExport(bpy.types.Operator):
                 return line
 
         # Set the file path for export
-        filepath = self.directory + "PDSMS.obj"
+        filepath = self.filepath + ".obj"
 
         obj = bpy.context.object
         
@@ -126,9 +116,9 @@ class PDSMSExport(bpy.types.Operator):
 
         #fix material file if using mix shaders in blender
 
-        filepath = self.directory + "PDSMS.mtl"
+        filepath = self.filepath + ".mtl"
         input_filepath = filepath
-        output_filepath = self.directory + ".conversioninprogress"
+        output_filepath = self.filepath + ".conversioninprogress"
 
         with open(input_filepath, 'r') as infile, open(output_filepath, 'w') as outfile:
             for line in infile:
