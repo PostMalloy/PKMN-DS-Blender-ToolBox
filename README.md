@@ -32,5 +32,5 @@ This can be a bit tedious for a model with many materials, so this addon will do
 
 ## Remove Unassigned Materials
 
-PDSMS doesn't like an .obj file or .mtl file with textures that aren't included in the model. This can happen if you split an object into pieces and don't remove the unused materials. This script removes unassigned materials from a model. Select in object mode, run "Remove Unassigned Materials", done.
+PDSMS refuse to load an .obj file if the .mtl file contains references to textures that aren't actually included in the model. This can happen if you split an object into pieces and don't remove the unused materials. This script solves that issue by removing unassigned materials from a model. Select in object mode, run "Remove Unassigned Materials", done.
 
