@@ -1,11 +1,11 @@
 import bpy
 
-import MainAddon
-import Import_PDSMS_obj
-import Export_PDSMS_obj
-import Mix_Textures_VCs
-import Remove_Unused_Materials
-import Split_By_VC2
+from . import MainAddon
+from . import Import_PDSMS_obj
+from . import Export_PDSMS_obj
+from . import Mix_Textures_VCs
+from . import Remove_Unused_Materials
+from . import Split_By_VC2
 
 bl_info = {
     "name": "PKMN DS Toolbox: Main Addon",
