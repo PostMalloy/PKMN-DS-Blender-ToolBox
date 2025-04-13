@@ -2,7 +2,7 @@
 A set of simple python scripts that can help when making models for DS games, particularly the core GenIV-V pokemon games.
 
 # Installation (Blender 4.0+)
-Download the files, unzip them and install them via the blender addons menu. Make sure all plugins labeled "PKMN DS Toolbox" are active. As long as MainAddon.py is enabled, you can install as few or as many as you'd like.
+Download the files as zip, and add the whole .zip via the blender addons menu. Make sure the plugin labeled "PKMN DS Toolbox" is active. 
 
 # How to Use
 You'll find the tools to the right of the shading menu:
@@ -33,4 +33,3 @@ This can be a bit tedious for a model with many materials, so this addon will do
 ## Remove Unassigned Materials
 
 PDSMS refuse to load an .obj file if the .mtl file contains references to textures that aren't actually included in the model. This can happen if you split an object into pieces and don't remove the unused materials. This script solves that issue by removing unassigned materials from a model. Select in object mode, run "Remove Unassigned Materials", done.
-
