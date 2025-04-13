@@ -78,17 +78,3 @@ class SplitByVertexColorOperator(bpy.types.Operator):
     def execute(self, context):
         split_faces_by_vertex_color()
         return {'FINISHED'}
-
-def menu_func(self, context):
-    self.layout.operator(SplitByVertexColorOperator.bl_idname, text="Split By Vertex Color")
-
-def register():
-    bpy.utils.register_class(SplitByVertexColorOperator)
-    bpy.types.VIEW3D_MT_edit_mesh_context_menu.prepend(menu_func)
-
-def unregister():
-    bpy.utils.unregister_class(SplitByVertexColorOperator)
-    bpy.types.VIEW3D_MT_edit_mesh_context_menu.remove(menu_func)
-
-if __name__ == "__main__":
-    register()

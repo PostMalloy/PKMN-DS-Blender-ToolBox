@@ -131,19 +131,3 @@ class PDSMSExport(bpy.types.Operator):
         os.rename(output_filepath, input_filepath)
 
         return {'FINISHED'}
-
-
-def menu_func(self, context):
-    self.layout.operator(PDSMSExport.bl_idname)
-
-def register():
-    bpy.utils.register_class(PDSMSExport)
-
-def unregister():
-    bpy.utils.unregister_class(PDSMSExport)
-
-
-# This allows you to run the script directly from Blender's Text editor
-# to test the add-on without having to install it.
-if __name__ == "__main__":
-    register()

@@ -69,18 +69,3 @@ class PDSMSImport(bpy.types.Operator):
         os.remove(output_filepath)
 
         return {'FINISHED'}
-
-def menu_func(self, context):
-    self.layout.operator(PDSMSImport.bl_idname)
-
-def register():
-    bpy.utils.register_class(PDSMSImport)
-
-def unregister():
-    bpy.utils.unregister_class(PDSMSImport)
-
-
-# This allows you to run the script directly from Blender's Text editor
-# to test the add-on without having to install it.
-if __name__ == "__main__":
-    register()

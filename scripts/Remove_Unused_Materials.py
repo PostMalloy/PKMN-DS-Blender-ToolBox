@@ -33,13 +33,3 @@ class RemoveUnassignedMaterialsOperator(bpy.types.Operator):
     def execute(self, context):
         remove_unassigned_materials()
         return {'FINISHED'}
-
-# Register classes
-def register():
-    bpy.utils.register_class(RemoveUnassignedMaterialsOperator)
-
-def unregister():
-    bpy.utils.unregister_class(RemoveUnassignedMaterialsOperator)
-
-if __name__ == "__main__":
-    register()

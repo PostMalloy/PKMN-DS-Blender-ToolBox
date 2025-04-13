@@ -42,19 +42,10 @@ def draw_item(self, context):
     layout.menu(CustomMenu.bl_idname)
 
 def register():
-    bpy.utils.register_class(ImportExportSubmenu)
-    bpy.utils.register_class(MaterialToolsSubmenu)
-    bpy.utils.register_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.append(draw_item)
 
 def unregister():
-    bpy.utils.unregister_class(ImportExportSubmenu)
-    bpy.utils.unregister_class(MaterialToolsSubmenu)
-    bpy.utils.unregister_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.remove(draw_item)
 
 if __name__ == "__main__":
     register()
-
-    # The menu can also be called from scripts
-    bpy.ops.wm.call_menu(name=CustomMenu.bl_idname)
