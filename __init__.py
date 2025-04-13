@@ -1,11 +1,11 @@
 import bpy
 
-from scripts import MainAddon
-from scripts import Import_PDSMS_obj
-from scripts import Export_PDSMS_obj
-from scripts import Mix_Textures_VCs
-from scripts import Remove_Unused_Materials
-from scripts import Split_By_VC2
+import MainAddon
+import Import_PDSMS_obj
+import Export_PDSMS_obj
+import Mix_Textures_VCs
+import Remove_Unused_Materials
+import Split_By_VC2
 
 bl_info = {
     "name": "PKMN DS Toolbox: Main Addon",
@@ -17,14 +17,14 @@ bl_info = {
 }
 
 classes = (
-MainAddon.ImportExportSubmenu,
-MainAddon.MaterialToolsSubmenu,
-MainAddon.CustomMenu,
-Import_PDSMS_obj.PDSMSImport,
-Export_PDSMS_obj.PDSMSExport,
-Mix_Textures_VCs.VCTextureMix,
-Remove_Unused_Materials.RemoveUnassignedMaterialsOperator,
-Split_By_VC2.SplitByVertexColorOperator,
+    MainAddon.ImportExportSubmenu,
+    MainAddon.MaterialToolsSubmenu,
+    MainAddon.CustomMenu,
+    Import_PDSMS_obj.PDSMSImport,
+    Export_PDSMS_obj.PDSMSExport,
+    Mix_Textures_VCs.VCTextureMix,
+    Remove_Unused_Materials.RemoveUnassignedMaterialsOperator,
+    Split_By_VC2.SplitByVertexColorOperator,
 )
 
 
