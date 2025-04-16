@@ -12,7 +12,6 @@ from bpy.props import StringProperty, BoolProperty
 from bpy.types import Operator
 
 class PDSMSExport(bpy.types.Operator):
-    """My Object Moving Script"""          # Use this as a tooltip for menu items and buttons.
     bl_idname = "object.export_pdsms"      # Unique identifier for buttons and menu items to reference.
     bl_label = "Export PDSMS .obj"      # Display name in the interface.
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.

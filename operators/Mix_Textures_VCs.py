@@ -9,7 +9,7 @@ import bpy
 from bpy import context
 
 class VCTextureMix(bpy.types.Operator):
-    """My Object Moving Script"""          # Use this as a tooltip for menu items and buttons.
+    """Setup mix shader to see VCs and Textures at the same time"""          # Use this as a tooltip for menu items and buttons.
     bl_idname = "object.mixvctextures"      # Unique identifier for buttons and menu items to reference.
     bl_label = "Setup VCs + Textures"      # Display name in the interface.
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.
