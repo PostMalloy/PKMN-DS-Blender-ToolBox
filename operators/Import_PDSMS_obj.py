@@ -11,6 +11,7 @@ from bpy.props import StringProperty, BoolProperty
 from bpy.types import Operator
 
 class PDSMSImport(bpy.types.Operator):
+    """Import PDSMS .obj with vertex colors"""
     bl_idname = "object.import_pdsms"
     bl_label = "Import PDSMS .obj"
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.

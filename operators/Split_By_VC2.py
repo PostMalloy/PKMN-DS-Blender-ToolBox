@@ -70,6 +70,7 @@ def split_faces_by_vertex_color():
         bpy.ops.object.mode_set(mode='OBJECT')
 
 class SplitByVertexColorOperator(bpy.types.Operator):
+    """Split object into pieces by assigned vertex color"""
     bl_label = "Split By Vertex Color"
     bl_idname = "mesh.split_by_vertex_color"
     bl_options = {'REGISTER', 'UNDO'}
