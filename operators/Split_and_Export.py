@@ -5,7 +5,7 @@ from bpy import context
 from bpy.props import StringProperty, BoolProperty
 from bpy.types import Operator
 
-from .operators import Split_By_VC2, Export_PDSMS_obj
+from . import Split_By_VC2, Export_PDSMS_obj
 
 class PDSMSSplitExport(bpy.types.Operator):
     """Split object by VC and export all resulting meshes at once"""          # Use this as a tooltip for menu items and buttons.
