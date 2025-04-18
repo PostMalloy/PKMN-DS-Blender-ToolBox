@@ -58,7 +58,7 @@ class CameraSubmenu(bpy.types.Menu):
 
 class VCSubmenu(bpy.types.Menu):
     bl_label = "VC Tools"
-    bl_idname = "OBJECT_Camera_Tool_submenu"
+    bl_idname = "OBJECT_VC_Tool_submenu"
 
     def draw(self, context):
         layout = self.layout
