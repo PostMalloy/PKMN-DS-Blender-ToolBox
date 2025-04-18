@@ -1,6 +1,6 @@
 import bpy
 
-from .operators import Split_By_VC2, Import_PDSMS_obj, Mix_Textures_VCs, Remove_Unused_Materials, Export_PDSMS_obj, Split_and_Export, Set_Camera
+from .operators import Split_By_VC2, Import_PDSMS_obj, Mix_Textures_VCs, Remove_Unused_Materials, Export_PDSMS_obj, Split_and_Export, Set_Camera, VC_Shortcuts
 
 bl_info = {
     "name": "PKMN DS Toolbox: Main Addon",
@@ -20,7 +20,9 @@ classes = (
     Mix_Textures_VCs.VCTextureMix,
     Remove_Unused_Materials.RemoveUnassignedMaterialsOperator,
     Split_By_VC2.SplitByVertexColorOperator,
-    Set_Camera.SetCameraHGSSInterior
+    Set_Camera.SetCameraHGSSInterior,
+    VC_Shortcuts.vcdark,
+    VC_Shortcuts.vclight
 )
 
 # Register menus
@@ -53,6 +55,16 @@ class CameraSubmenu(bpy.types.Menu):
         layout = self.layout
         layout.operator("object.set_camera_hgss_interior")
 
+
+class VCSubmenu(bpy.types.Menu):
+    bl_label = "VC Tools"
+    bl_idname = "OBJECT_Camera_Tool_submenu"
+
+    def draw(self, context):
+        layout = self.layout
+        layout.operator("object.object.set_vc_brush_gflight")
+        layout.operator("object.object.set_vc_brush_gfdark")
+
 class CustomMenu(bpy.types.Menu):
     bl_label = "PKMN DS Toolbox"
     bl_idname = "OBJECT_MT_pkmn_ds_toolbox"
@@ -62,6 +74,7 @@ class CustomMenu(bpy.types.Menu):
         layout.menu(ImportExportSubmenu.bl_idname)  # Add the submenus
         layout.menu(MaterialToolsSubmenu.bl_idname)
         layout.menu(CameraSubmenu.bl_idname)
+        layout.menu(VCSubmenu.bl_idname)
         layout.operator("mesh.split_by_vertex_color")
 
 def draw_item(self, context):
@@ -72,6 +85,7 @@ def register():
     bpy.utils.register_class(ImportExportSubmenu)
     bpy.utils.register_class(MaterialToolsSubmenu)
     bpy.utils.register_class(CameraSubmenu)
+    bpy.utils.register_class(VCSubmenu)
     bpy.utils.register_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.append(draw_item)
     for cls in classes:
@@ -82,6 +96,7 @@ def unregister():
     bpy.utils.unregister_class(ImportExportSubmenu)
     bpy.utils.unregister_class(MaterialToolsSubmenu)
     bpy.utils.unregister_class(CameraSubmenu)
+    bpy.utils.unregister_class(VCSubmenu)
     bpy.utils.unregister_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.remove(draw_item)
     for cls in classes:
