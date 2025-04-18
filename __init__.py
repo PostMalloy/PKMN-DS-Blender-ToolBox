@@ -62,8 +62,8 @@ class VCSubmenu(bpy.types.Menu):
 
     def draw(self, context):
         layout = self.layout
-        layout.operator("object.object.set_vc_brush_gflight")
-        layout.operator("object.object.set_vc_brush_gfdark")
+        layout.operator("object.set_vc_brush_gflight")
+        layout.operator("object.set_vc_brush_gfdark")
 
 class CustomMenu(bpy.types.Menu):
     bl_label = "PKMN DS Toolbox"
