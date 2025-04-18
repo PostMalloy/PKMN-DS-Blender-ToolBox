@@ -2,9 +2,9 @@ import bpy
 import math
 
 class SetCameraHGSSInterior(bpy.types.Operator):
-    """Split object by VC and export all resulting meshes at once"""          # Use this as a tooltip for menu items and buttons.
+    """Set camera perspective, zoom and angle to match HGSS interior camera"""          # Use this as a tooltip for menu items and buttons.
     bl_idname = "object.set_camera_hgss_interior"      # Unique identifier for buttons and menu items to reference.
-    bl_label = "Set camera perspective, zoom and angle to match HGSS interior camera"      # Display name in the interface.
+    bl_label = "Set Camera - HGSS Interior"      # Display name in the interface.
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.
 
     def execute(self,context):
