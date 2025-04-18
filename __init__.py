@@ -43,6 +43,7 @@ class MaterialToolsSubmenu(bpy.types.Menu):
         layout = self.layout
         layout.operator("object.cut_to_tiles") #Nils pixel look script is housed here if it is installed
         layout.operator("object.mixvctextures")
+        layout.operator("object.remove_unassigned_materials")
 
 class CameraSubmenu(bpy.types.Menu):
     bl_label = "Camera Tools"
@@ -62,7 +63,6 @@ class CustomMenu(bpy.types.Menu):
         layout.menu(MaterialToolsSubmenu.bl_idname)
         layout.menu(CameraSubmenu.bl_idname)
         layout.operator("mesh.split_by_vertex_color")
-        layout.operator("object.remove_unassigned_materials")
 
 def draw_item(self, context):
     layout = self.layout
