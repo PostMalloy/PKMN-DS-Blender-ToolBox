@@ -1,6 +1,6 @@
 import bpy
 
-from .operators import Split_By_VC2, Import_PDSMS_obj, Mix_Textures_VCs, Remove_Unused_Materials, Export_PDSMS_obj
+from .operators import Split_By_VC2, Import_PDSMS_obj, Mix_Textures_VCs, Remove_Unused_Materials, Export_PDSMS_obj, Split_and_Export, Set_Camera
 
 bl_info = {
     "name": "PKMN DS Toolbox: Main Addon",
@@ -15,10 +15,12 @@ bl_info = {
 
 classes = (
     Import_PDSMS_obj.PDSMSImport,
+    Split_and_Export.PDSMSSplitExport,
     Export_PDSMS_obj.PDSMSExport,
     Mix_Textures_VCs.VCTextureMix,
     Remove_Unused_Materials.RemoveUnassignedMaterialsOperator,
     Split_By_VC2.SplitByVertexColorOperator,
+    Set_Camera.SetCameraHGSSInterior
 )
 
 # Register menus
@@ -31,6 +33,7 @@ class ImportExportSubmenu(bpy.types.Menu):
         layout = self.layout
         layout.operator("object.import_pdsms")
         layout.operator("object.export_pdsms")
+        layout.operator("object.export_and_split")
 
 class MaterialToolsSubmenu(bpy.types.Menu):
     bl_label = "Material Tools"
@@ -41,6 +44,14 @@ class MaterialToolsSubmenu(bpy.types.Menu):
         layout.operator("object.cut_to_tiles") #Nils pixel look script is housed here if it is installed
         layout.operator("object.mixvctextures")
 
+class CameraSubmenu(bpy.types.Menu):
+    bl_label = "Camera Tools"
+    bl_idname = "OBJECT_Camera_Tool_submenu"
+
+    def draw(self, context):
+        layout = self.layout
+        layout.operator("object.set_camera_hgss_interior")
+
 class CustomMenu(bpy.types.Menu):
     bl_label = "PKMN DS Toolbox"
     bl_idname = "OBJECT_MT_pkmn_ds_toolbox"
@@ -49,6 +60,7 @@ class CustomMenu(bpy.types.Menu):
         layout = self.layout
         layout.menu(ImportExportSubmenu.bl_idname)  # Add the submenus
         layout.menu(MaterialToolsSubmenu.bl_idname)
+        layout.menu(CameraSubmenu.bl_idname)
         layout.operator("mesh.split_by_vertex_color")
         layout.operator("object.remove_unassigned_materials")
 
