@@ -13,6 +13,6 @@ class PDSMSSplitExport(bpy.types.Operator):
     bl_label = "Split and Export all as .obj"      # Display name in the interface.
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.
 
-    def execute(self,context):
+   #def execute(self,context):
         #tbd
-    return {'FINISHED'}
+    #return {'FINISHED'}
