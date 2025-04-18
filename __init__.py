@@ -71,6 +71,7 @@ def draw_item(self, context):
 def register():
     bpy.utils.register_class(ImportExportSubmenu)
     bpy.utils.register_class(MaterialToolsSubmenu)
+    bpy.utils.register_class(CameraSubmenu)
     bpy.utils.register_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.append(draw_item)
     for cls in classes:
@@ -80,6 +81,7 @@ def register():
 def unregister():
     bpy.utils.unregister_class(ImportExportSubmenu)
     bpy.utils.unregister_class(MaterialToolsSubmenu)
+    bpy.utils.unregister_class(CameraSubmenu)
     bpy.utils.unregister_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.remove(draw_item)
     for cls in classes:
