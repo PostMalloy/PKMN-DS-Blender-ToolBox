@@ -22,4 +22,4 @@ class SetCameraHGSSInterior(bpy.types.Operator):
 
         set_viewport_angle_and_zoom()
 
-    return {'FINISHED'}
+        return {'FINISHED'}
