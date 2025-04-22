@@ -104,7 +104,7 @@ def register():
     for cls in classes:
         bpy.utils.register_class(cls)
     for cls in menus:
-        bpy.utils.register_class(mns)
+        bpy.utils.register_class(cls)
 
 
 def unregister():
