@@ -9,7 +9,7 @@ class SetCameraHGSSInterior(bpy.types.Operator):
 
     def execute(self,context):
 
-        def set_viewport_angle_and_zoom(angle_z=45):
+        def set_viewport_angle_and_zoom(angle_z=50): #angle from melonds ripper
             for area in bpy.context.screen.areas:
                 if area.type == 'VIEW_3D':
                     for space in area.spaces:
