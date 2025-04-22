@@ -1,7 +1,7 @@
 import bpy
 import os
 
-class importplayermodelgen4(bpy.types.operator):
+class importplayermodelgen4(bpy.types.Operator):
     """Import a reference for the genIV player overworld sprite"""          # Use this as a tooltip for menu items and buttons.
     bl_idname = "object.playermodel_gen4"      # Unique identifier for buttons and menu items to reference.
     bl_label = "Import genIV OW Model"      # Display name in the interface.

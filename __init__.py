@@ -56,7 +56,6 @@ class CameraSubmenu(bpy.types.Menu):
         layout = self.layout
         layout.operator("object.set_camera_hgss_interior")
 
-
 class VCSubmenu(bpy.types.Menu):
     bl_label = "VC Tools"
     bl_idname = "OBJECT_VC_Tool_submenu"
