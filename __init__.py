@@ -90,27 +90,28 @@ def draw_item(self, context):
     layout = self.layout
     layout.menu(CustomMenu.bl_idname)
 
+menus = (
+    ImportExportSubmenu,
+    MaterialToolsSubmenu,
+    CameraSubmenu,
+    VCSubmenu,
+    RefSubmenu,
+    CustomMenu
+)
+
 def register():
-    bpy.utils.register_class(ImportExportSubmenu)
-    bpy.utils.register_class(MaterialToolsSubmenu)
-    bpy.utils.register_class(CameraSubmenu)
-    bpy.utils.register_class(VCSubmenu)
-    bpy.utils.register_class(RefSubmenu)
-    bpy.utils.register_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.append(draw_item)
     for cls in classes:
         bpy.utils.register_class(cls)
+    for cls in menus:
+        bpy.utils.register_class(mns)
 
 
 def unregister():
-    bpy.utils.unregister_class(ImportExportSubmenu)
-    bpy.utils.unregister_class(MaterialToolsSubmenu)
-    bpy.utils.unregister_class(CameraSubmenu)
-    bpy.utils.unregister_class(VCSubmenu)
-    bpy.utils.unregister_class(RefSubmenu)
-    bpy.utils.unregister_class(CustomMenu)
     bpy.types.VIEW3D_HT_header.remove(draw_item)
     for cls in classes:
+        bpy.utils.unregister_class(cls)
+    for cls in menus:
         bpy.utils.unregister_class(cls)
 
 
