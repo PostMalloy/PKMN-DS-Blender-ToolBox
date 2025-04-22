@@ -10,13 +10,15 @@ class importplayermodelgen4(bpy.types.Operator):
 
     def execute(self,context):
 
-        for mod in addon_utils.modules():
-            if mod.bl_info['name'] == "PKMN DS Toolbox: Main Addon":
-                filepath = mod.__file__
-            else:
-                pass
+        # for mod in addon_utils.modules():
+        #     if mod.bl_info['name'] == "PKMN DS Toolbox: Main Addon":
+        #         filepath = mod.__file__
+        #     else:
+        #         pass
+        #
+        # obj_path = os.path.join(os.path.dirname(filepath), "objects", "GEN4OW.obj")
 
-        obj_path = os.path.join(os.path.dirname(filepath), "objects", "GEN4OW.obj")
+        obj_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "objects", "GEN4OW.obj")
 
         bpy.ops.wm.obj_import(
             filepath=obj_path, #str(self.filepath)
