@@ -1,6 +1,5 @@
 import bpy
 import os
-from bpy.types import Operator
 
 class importplayermodelgen4(bpy.types.operator):
     """Import a reference for the genIV player overworld sprite"""          # Use this as a tooltip for menu items and buttons.
