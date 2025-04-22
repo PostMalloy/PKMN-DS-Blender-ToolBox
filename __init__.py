@@ -103,16 +103,16 @@ def register():
     bpy.types.VIEW3D_HT_header.append(draw_item)
     for cls in classes:
         bpy.utils.register_class(cls)
-    for cls in menus:
-        bpy.utils.register_class(cls)
+    for mns in menus:
+        bpy.utils.register_class(mns)
 
 
 def unregister():
     bpy.types.VIEW3D_HT_header.remove(draw_item)
     for cls in classes:
         bpy.utils.unregister_class(cls)
-    for cls in menus:
-        bpy.utils.unregister_class(cls)
+    for mns in menus:
+        bpy.utils.unregister_class(mns)
 
 
 if __name__ == "__main__":
