@@ -7,10 +7,10 @@ class importplayermodelgen4(bpy.types.Operator):
     bl_label = "Import genIV OW Model"      # Display name in the interface.
     bl_options = {'REGISTER', 'UNDO'}      # Enable undo for the operator.
 
-    addon_path = os.path.dirname(os.path.realpath(__file__))
-    obj_path = os.path.join(addon_path, "objects", "GEN4OW.obj")
-
     def execute(self,context):
+
+        addon_path = os.path.dirname(os.path.realpath(__file__))
+        obj_path = os.path.join(addon_path, "objects", "GEN4OW.obj")
 
         bpy.ops.wm.obj_import(
             filepath=obj_path, #str(self.filepath)
