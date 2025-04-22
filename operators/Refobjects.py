@@ -1,5 +1,6 @@
 import bpy
 import os
+import addon_utils
 
 class importplayermodelgen4(bpy.types.Operator):
     """Import a reference for the genIV player overworld sprite"""          # Use this as a tooltip for menu items and buttons.
@@ -9,13 +10,28 @@ class importplayermodelgen4(bpy.types.Operator):
 
     def execute(self,context):
 
-        addon_path = os.path.dirname(os.path.realpath(__file__))
-        obj_path = os.path.join(addon_path, "objects", "GEN4OW.obj")
+        for mod in addon_utils.modules():
+            if mod.bl_info['name'] == "PKMN DS Toolbox: Main Addon":
+                filepath = mod.__file__
+            else:
+                pass
+
+        obj_path = os.path.join(os.path.dirname(filepath), "objects", "GEN4OW.obj")
 
         bpy.ops.wm.obj_import(
             filepath=obj_path, #str(self.filepath)
-            forward_axis='-Z',
+            forward_axis='NEGATIVE_Z',
             up_axis='Y',
         )
+
+
+        # Set interpolation method to closest
+        obj = bpy.context.active_object
+        for mat_slot in obj.material_slots:
+            mat = mat_slot.material
+            if mat and mat.use_nodes:
+                for node in mat.node_tree.nodes:
+                    if node.type == 'TEX_IMAGE':
+                        node.interpolation = 'Closest'
 
         return {'FINISHED'}
